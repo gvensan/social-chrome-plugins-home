@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — LinkedIn Feed Toolkit (Unofficial)</title>
+  <meta name="description" content="Privacy policy for the LinkedIn Feed Toolkit Chrome extension.">
+  <link rel="icon" type="image/png" href="../icons/linkedin.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <a class="back-link" href="../index.html">← Back to Gvensan's Tools</a>
+
+    <p class="unofficial-banner" role="note">
+      <strong>Unofficial.</strong> This is an independent third-party tool. Not affiliated with, endorsed by, or sponsored by LinkedIn Corporation.
+    </p>
+
+    <h1>LinkedIn Feed Toolkit (Unofficial) — Privacy Policy</h1>
+    <p class="subtitle">Privacy policy for the LinkedIn Feed Toolkit Chrome extension.</p>
+    <p class="meta">Effective date: 2026-05-11</p>
+
+    <p>
+      LinkedIn Feed Toolkit ("the extension") is a browser extension that helps you compose, save, and launch LinkedIn search URLs from a side panel. This policy describes what data the extension processes, where it is stored, and what permissions it uses.
+    </p>
+
+    <h2>Summary</h2>
+    <ul>
+      <li>The extension does <strong>not</strong> collect, transmit, or share any user data with the developer or any third party.</li>
+      <li>All saved searches, saved companies, saved people, and settings are stored <strong>locally</strong> on your device via <code>chrome.storage.local</code> and never leave your browser.</li>
+      <li>The extension makes network requests only to (a) navigate browser tabs to LinkedIn URLs that you explicitly composed, and (b) when you explicitly click a capture button, fetch a single LinkedIn URL with your session cookies to extract a numeric company ID or opaque profile token. <strong>No background, scheduled, or automated requests.</strong></li>
+    </ul>
+
+    <h2>Data the extension stores</h2>
+    <p>
+      All of the following is stored in <code>chrome.storage.local</code>, which is scoped to your Chrome profile on this device and does not sync across devices unless you manually export/import:
+    </p>
+    <ul>
+      <li><strong>Saved searches</strong> — names, tags, and the search-input shape you composed (keywords, filters, etc.) plus the resulting URL.</li>
+      <li><strong>Saved companies</strong> — friendly labels, optional numeric company IDs, and optional LinkedIn company slugs.</li>
+      <li><strong>Saved people</strong> — friendly labels, optional opaque LinkedIn profile tokens (<code>ACoAA…</code>), optional legacy numeric member IDs, and optional vanity slugs.</li>
+      <li><strong>Your own LinkedIn profile token</strong> (optional) — captured if you explicitly use the "From current tab" or "Resolve" button in Settings → Your LinkedIn profile, to enable the "Me" filter in the Posts builder.</li>
+      <li><strong>Settings</strong> — theme, display mode (popup vs side panel), default search type, default landing view, default recency, open mode (current tab vs new tab).</li>
+    </ul>
+    <p>
+      This data is <strong>not transmitted anywhere</strong>. The "Export JSON" feature in Settings → Backup writes this data to a file on your disk via the browser's standard download mechanism; the extension does not upload the file.
+    </p>
+
+    <h2>Permissions used</h2>
+
+    <h3><code>storage</code></h3>
+    <p>Used to persist saved searches, saved entities (companies and people), and settings locally via <code>chrome.storage.local</code>.</p>
+
+    <h3><code>sidePanel</code></h3>
+    <p>Used to render the extension UI as a Chrome side panel. You can switch to a classic popup in Settings; both modes render the same UI.</p>
+
+    <h3><code>scripting</code></h3>
+    <p>
+      Used <strong>only</strong> by the "From current tab" / "Get ID" / "Get token" buttons in Filters and in Settings → Your LinkedIn profile. On your explicit click, the extension injects a one-shot function into the active LinkedIn tab that runs a single regular-expression match against the rendered HTML:
+    </p>
+    <ul>
+      <li><code>/urn:li:fsd_company:(\d+)/</code> for company pages, or</li>
+      <li><code>/(?:urn:li:fsd_profile:|\/in\/)(ACoA[A-Za-z0-9_-]{20,})/</code> for profile pages.</li>
+    </ul>
+    <p>
+      The function returns only the matched ID or profile token to the extension. It reads no other DOM content, makes no network requests, and <strong>never runs on page load, on navigation, or on any non-user-initiated event</strong>.
+    </p>
+
+    <h3><code>host_permissions: ["*://*.linkedin.com/*"]</code></h3>
+    <p>Scoped to LinkedIn only. Required so that:</p>
+    <ol>
+      <li>The <code>scripting</code> capability above can target LinkedIn tabs.</li>
+      <li>The toolkit can read the active tab's URL via <code>chrome.tabs.query</code> to detect when you are on a LinkedIn company or profile page and offer the "From current tab" capture button.</li>
+      <li>On user-initiated capture, the extension can make a <strong>single same-origin</strong> <code>fetch()</code> to a <code>/company/&lt;slug&gt;/</code>, <code>/in/&lt;vanity&gt;/</code>, or <code>/me/</code> URL with your session cookies, to recover an ID or profile token when the active tab does not already carry it.</li>
+    </ol>
+    <div class="callout">
+      <strong>No non-LinkedIn tab data is ever accessed.</strong> The extension cannot see the URLs or content of your other tabs (Gmail, banking, etc.). The extension never runs on LinkedIn tabs except on explicit user click, never observes page changes, and never records or transmits tab content beyond the single regex match described above.
+    </div>
+
+    <h2>What the extension does NOT do</h2>
+    <ul>
+      <li>No background scraping. No content scripts that run on page load. No scheduled, recurring, or polling reads.</li>
+      <li>No automation. No clicks, no API calls beyond the user-initiated single fetches described above.</li>
+      <li>No data sold or transferred to third parties.</li>
+      <li>No data used for advertising, profiling, or analytics.</li>
+      <li>No data used to determine creditworthiness or for lending purposes.</li>
+      <li>No data sent to the developer or any external server. The extension has no developer-controlled backend.</li>
+      <li>No cookies read or modified by the extension code. (The user-initiated <code>fetch()</code> to a LinkedIn URL is same-origin and uses the browser's own cookie store, the same way visiting that URL in a normal tab would.)</li>
+    </ul>
+
+    <h2>Third-party services</h2>
+    <p>The extension does not use any third-party services, analytics providers, error-reporting services, or remote configuration.</p>
+
+    <h2>User rights and choices</h2>
+    <p>Because the extension stores all data locally and transmits nothing, you have complete control:</p>
+    <ul>
+      <li><strong>View</strong> your data via Settings → Backup → "Export JSON."</li>
+      <li><strong>Modify</strong> any saved search, company, or person from inside the extension UI (Rename, Delete, etc.).</li>
+      <li><strong>Delete</strong> all extension data at any time by removing the extension from Chrome — that automatically clears its <code>chrome.storage.local</code> namespace.</li>
+    </ul>
+
+    <h2>Changes to this policy</h2>
+    <p>This policy may be updated as the extension evolves. Any material change will be reflected in a new "Effective date" at the top of this document. The latest version is always available at the URL where you read this policy.</p>
+
+    <div class="contact-block">
+      <h2 style="margin-top:0">Contact</h2>
+      <p>For questions about this privacy policy, file an issue at:</p>
+      <p><a href="https://github.com/gvensan/social-chrome-plugins/issues" target="_blank" rel="noopener">https://github.com/gvensan/social-chrome-plugins/issues</a></p>
+    </div>
+
+    <footer>
+      This extension is not affiliated with, endorsed by, or sponsored by LinkedIn Corporation.
+    </footer>
+  </main>
+</body>
+</html>

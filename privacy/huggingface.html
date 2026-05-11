@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Hugging Face Search Toolkit (Unofficial)</title>
+  <meta name="description" content="Privacy policy for the Hugging Face Search Toolkit Chrome extension.">
+  <link rel="icon" type="image/png" href="../icons/huggingface.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <a class="back-link" href="../index.html">← Back to Gvensan's Tools</a>
+
+    <p class="unofficial-banner" role="note">
+      <strong>Unofficial.</strong> This is an independent third-party tool. Not affiliated with, endorsed by, or sponsored by Hugging Face, Inc.
+    </p>
+
+    <h1>Hugging Face Search Toolkit (Unofficial) — Privacy Policy</h1>
+    <p class="subtitle">Privacy policy for the Hugging Face Search Toolkit Chrome extension.</p>
+    <p class="meta">Effective date: 2026-05-11</p>
+
+    <p>
+      Hugging Face Search Toolkit ("the extension") is a browser extension that helps you compose, save, and launch Hugging Face search URLs from a side panel. This policy describes what data the extension processes, where it is stored, and what permissions it uses.
+    </p>
+
+    <h2>Summary</h2>
+    <ul>
+      <li>The extension does <strong>not</strong> collect, transmit, or share any user data with the developer or any third party.</li>
+      <li>All saved searches and settings are stored <strong>locally</strong> on your device via <code>chrome.storage.local</code> and never leave your browser.</li>
+      <li>The extension makes network requests only to navigate browser tabs to URLs you explicitly composed. <strong>No background, scheduled, or automated requests.</strong></li>
+    </ul>
+
+    <h2>Data the extension stores</h2>
+    <p>
+      All of the following is stored in <code>chrome.storage.local</code>, which is scoped to your Chrome profile on this device and does not sync across devices unless you manually export/import:
+    </p>
+    <ul>
+      <li><strong>Saved searches</strong> — names, tags, and the search-input shape you composed (keywords, task, library, license, and other filters) plus the resulting huggingface.co Models, Datasets, or Spaces search URL.</li>
+      <li><strong>Tags</strong> — labels you attach to saved searches for organization.</li>
+      <li><strong>Settings</strong> — theme, display mode (popup vs side panel), default search type (<code>defaultSearchType</code>: models, datasets, spaces), default landing view, open mode (current tab vs new tab).</li>
+    </ul>
+    <p>
+      This data is <strong>not transmitted anywhere</strong>. The "Export JSON" feature in Settings → Backup writes this data to a file on your disk via the browser's standard download mechanism; the extension does not upload the file.
+    </p>
+
+    <h2>Permissions used</h2>
+
+    <h3><code>storage</code></h3>
+    <p>Used to persist saved searches, tags, and settings locally via <code>chrome.storage.local</code>.</p>
+
+    <h3><code>sidePanel</code></h3>
+    <p>Used to render the extension UI as a Chrome side panel. You can switch to a classic popup in Settings; both modes render the same UI.</p>
+
+    <h2>What the extension does NOT do</h2>
+    <ul>
+      <li>No background scraping. No content scripts. No scheduled, recurring, or polling reads.</li>
+      <li>No automation. No clicks, no API calls. The extension only opens user-composed URLs in browser tabs.</li>
+      <li>No data sold or transferred to third parties.</li>
+      <li>No data used for advertising, profiling, or analytics.</li>
+      <li>No data used to determine creditworthiness or for lending purposes.</li>
+      <li>No data sent to the developer or any external server. The extension has no developer-controlled backend.</li>
+      <li>The extension declares no <code>host_permissions</code> and runs no content scripts. It cannot see the URLs or content of any of your tabs.</li>
+    </ul>
+
+    <div class="callout">
+      <strong>No tab data is ever accessed.</strong> The extension declares no host permissions and injects no scripts. It cannot read the URLs, cookies, or content of any tab — including huggingface.co tabs.
+    </div>
+
+    <h2>Third-party services</h2>
+    <p>The extension does not use any third-party services, analytics providers, error-reporting services, or remote configuration.</p>
+
+    <h2>User rights and choices</h2>
+    <p>Because the extension stores all data locally and transmits nothing, you have complete control:</p>
+    <ul>
+      <li><strong>View</strong> your data via Settings → Backup → "Export JSON."</li>
+      <li><strong>Modify</strong> any saved search or tag from inside the extension UI (Rename, Delete, etc.).</li>
+      <li><strong>Delete</strong> all extension data at any time by removing the extension from Chrome — that automatically clears its <code>chrome.storage.local</code> namespace.</li>
+    </ul>
+
+    <h2>Changes to this policy</h2>
+    <p>This policy may be updated as the extension evolves. Any material change will be reflected in a new "Effective date" at the top of this document. The latest version is always available at the URL where you read this policy.</p>
+
+    <div class="contact-block">
+      <h2 style="margin-top:0">Contact</h2>
+      <p>For questions about this privacy policy, file an issue at:</p>
+      <p><a href="https://github.com/gvensan/social-chrome-plugins/issues" target="_blank" rel="noopener">https://github.com/gvensan/social-chrome-plugins/issues</a></p>
+    </div>
+
+    <footer>
+      This extension is not affiliated with, endorsed by, or sponsored by Hugging Face, Inc.
+    </footer>
+  </main>
+</body>
+</html>

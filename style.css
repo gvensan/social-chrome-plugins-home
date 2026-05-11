@@ -192,6 +192,38 @@ h1, h2, h3 {
   }
 }
 
+.unofficial-banner {
+  display: inline-block;
+  margin: 0 auto 24px;
+  padding: 8px 14px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--fg-muted);
+  line-height: 1.4;
+}
+
+.unofficial-banner strong {
+  color: var(--fg);
+  font-weight: 700;
+}
+
+.badge-unofficial {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 6px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--fg-dim);
+  vertical-align: 3px;
+}
+
 .hero h1 {
   font-size: clamp(2rem, 1.4rem + 2.6vw, 3.4rem);
   font-weight: 800;
@@ -394,6 +426,20 @@ h1, h2, h3 {
   background: var(--bg-elev);
   color: var(--fg);
   border-color: var(--border-strong);
+}
+
+.tool-privacy {
+  margin-top: 4px;
+  font-size: 12.5px;
+  color: var(--fg-dim);
+  text-align: center;
+  text-decoration: none;
+}
+
+.tool-privacy:hover {
+  color: var(--brand-600);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 /* ─── More coming ───────────────────────────────────────────── */
