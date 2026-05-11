@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gvensan's Tools — Chrome extensions that compose search URLs</title>
+  <meta name="description" content="A growing collection of lightweight Chrome extensions that compose, save, and launch high-signal search URLs on LinkedIn, GitHub, X, YouTube, Reddit, Hugging Face, and Hacker News. No scraping. No automation. No APIs.">
+  <meta name="theme-color" content="#2557D3">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Gvensan's Tools">
+  <meta property="og:description" content="Chrome extensions that compose search URLs — no scraping, no automation, no APIs.">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/png" href="icons/linkedin.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="#top" aria-label="Gvensan's Tools — home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span class="brand-name">Gvensan's&nbsp;Tools</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#tools">Tools</a>
+        <a href="#philosophy">Philosophy</a>
+        <a href="https://github.com/gvensan/social-chrome-plugins" target="_blank" rel="noopener">GitHub ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <h1>Chrome extensions that<br><span class="accent">compose search URLs</span></h1>
+        <p class="tagline">
+          A growing collection of lightweight tools for power users of LinkedIn, GitHub, X, YouTube, Reddit, Hugging Face, and Hacker News. <strong>No scraping. No automation. No platform APIs.</strong> Just guided forms that produce the search URLs you'd struggle to write by hand.
+        </p>
+        <ul class="hero-meta" aria-label="Key facts">
+          <li><span class="check">✓</span> 7 tools shipping</li>
+          <li><span class="check">✓</span> Manifest V3</li>
+          <li><span class="check">✓</span> Local-only data</li>
+          <li><span class="check">✓</span> Open source</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="tools" class="tools">
+      <div class="container">
+        <div class="section-head">
+          <h2>Tools</h2>
+          <p class="section-lead">One install per platform. Each opens as a Chrome side panel — leave it docked while you browse.</p>
+        </div>
+
+        <div class="tools-grid">
+
+          <article class="tool-card">
+            <header class="tool-head">
+              <img class="tool-icon" src="icons/linkedin.png" alt="" width="56" height="56" loading="lazy">
+              <div>
+                <h3>LinkedIn Feed Toolkit</h3>
+                <p class="tool-platform">linkedin.com</p>
+              </div>
+            </header>
+            <p class="tool-desc">
+              Posts, Jobs, and People search composer with saved-company and saved-person filters. Live URL preview, ID/token capture, "Me"-filter for your own posts, and templates for network-feed, fresh remote jobs, and warm-intro hunting.
+            </p>
+            <div class="tool-actions">
+              <a class="btn btn-primary disabled" aria-disabled="true">Coming soon to Chrome Web Store</a>
+              <a class="btn btn-secondary" href="https://github.com/gvensan/social-chrome-plugins/tree/main/packages/linkedin" target="_blank" rel="noopener">Source</a>
+            </div>
+          </article>
+
+          <article class="tool-card">
+            <header class="tool-head">
+              <img class="tool-icon" src="icons/github.png" alt="" width="56" height="56" loading="lazy">
+              <div>
+                <h3>GitHub Search Toolkit</h3>
+                <p class="tool-platform">github.com</p>
+              </div>
+            </header>
+            <p class="tool-desc">
+              Qualifier-helper builders for repositories, code, issues, PRs, and users. Built-in "PRs awaiting my review" + assigned-issues inbox templates, plus trending pages for any language.
+            </p>
+            <div class="tool-actions">
+              <a class="btn btn-primary disabled" aria-disabled="true">Coming soon to Chrome Web Store</a>
+              <a class="btn btn-secondary" href="https://github.com/gvensan/social-chrome-plugins/tree/main/packages/github" target="_blank" rel="noopener">Source</a>
+            </div>
+          </article>
+
+          <article class="tool-card">
+            <header class="tool-head">
+              <img class="tool-icon" src="icons/x.png" alt="" width="56" height="56" loading="lazy">
+              <div>
+                <h3>X Search Toolkit</h3>
+                <p class="tool-platform">x.com</p>
+              </div>
+            </header>
+            <p class="tool-desc">
+              Advanced-search composer with operator helpers (<code>from:</code>, <code>since:</code>, <code>min_faves:</code>, <code>filter:images</code>). Mode tabs for Top / Latest / People / Media.
+            </p>
+            <div class="tool-actions">
+              <a class="btn btn-primary disabled" aria-disabled="true">Coming soon to Chrome Web Store</a>
+              <a class="btn btn-secondary" href="https://github.com/gvensan/social-chrome-plugins/tree/main/packages/x" target="_blank" rel="noopener">Source</a>
+            </div>
+          </article>
+
+          <article class="tool-card">
+            <header class="tool-head">
+              <img class="tool-icon" src="icons/youtube.png" alt="" width="56" height="56" loading="lazy">
+              <div>
+                <h3>YouTube Search Toolkit</h3>
+                <p class="tool-platform">youtube.com</p>
+              </div>
+            </header>
+            <p class="tool-desc">
+              Keyword search with preset filters: today / this week / HD / long-form / CC license / channels / playlists. Uses YouTube's opaque <code>sp=</code> filter token.
+            </p>
+            <div class="tool-actions">
+              <a class="btn btn-primary disabled" aria-disabled="true">Coming soon to Chrome Web Store</a>
+              <a class="btn btn-secondary" href="https://github.com/gvensan/social-chrome-plugins/tree/main/packages/youtube" target="_blank" rel="noopener">Source</a>
+            </div>
+          </article>
+
+          <article class="tool-card">
+            <header class="tool-head">
+              <img class="tool-icon" src="icons/reddit.png" alt="" width="56" height="56" loading="lazy">
+              <div>
+                <h3>Reddit Search Toolkit</h3>
+                <p class="tool-platform">reddit.com</p>
+              </div>
+            </header>
+            <p class="tool-desc">
+              Posts, comments, subreddits, users, and feed search builders. Multireddit listings, top-of-week sorts, link-target search.
+            </p>
+            <div class="tool-actions">
+              <a class="btn btn-primary disabled" aria-disabled="true">Coming soon to Chrome Web Store</a>
+              <a class="btn btn-secondary" href="https://github.com/gvensan/social-chrome-plugins/tree/main/packages/reddit" target="_blank" rel="noopener">Source</a>
+            </div>
+          </article>
+
+          <article class="tool-card">
+            <header class="tool-head">
+              <img class="tool-icon" src="icons/huggingface.png" alt="" width="56" height="56" loading="lazy">
+              <div>
+                <h3>Hugging Face Search Toolkit</h3>
+                <p class="tool-platform">huggingface.co</p>
+              </div>
+            </header>
+            <p class="tool-desc">
+              Models, Datasets, and Spaces facet search with pipeline-tag, library, license, modality, and size filters.
+            </p>
+            <div class="tool-actions">
+              <a class="btn btn-primary disabled" aria-disabled="true">Coming soon to Chrome Web Store</a>
+              <a class="btn btn-secondary" href="https://github.com/gvensan/social-chrome-plugins/tree/main/packages/huggingface" target="_blank" rel="noopener">Source</a>
+            </div>
+          </article>
+
+          <article class="tool-card">
+            <header class="tool-head">
+              <img class="tool-icon" src="icons/hackernews.png" alt="" width="56" height="56" loading="lazy">
+              <div>
+                <h3>Hacker News Search Toolkit</h3>
+                <p class="tool-platform">news.ycombinator.com</p>
+              </div>
+            </header>
+            <p class="tool-desc">
+              Algolia-powered HN search with author scope, time-range, points/comments thresholds, and story-vs-comment scoping. Show HN / Ask HN templates.
+            </p>
+            <div class="tool-actions">
+              <a class="btn btn-primary disabled" aria-disabled="true">Coming soon to Chrome Web Store</a>
+              <a class="btn btn-secondary" href="https://github.com/gvensan/social-chrome-plugins/tree/main/packages/hackernews" target="_blank" rel="noopener">Source</a>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="more-coming">
+          <span class="more-coming-mark">+</span>
+          More tools coming. Have a search-URL family you wish was easier to compose? <a href="https://github.com/gvensan/social-chrome-plugins/issues" target="_blank" rel="noopener">Open an issue</a>.
+        </p>
+      </div>
+    </section>
+
+    <section id="philosophy" class="philosophy">
+      <div class="container">
+        <div class="section-head">
+          <h2>Philosophy</h2>
+          <p class="section-lead">Four principles every tool in this collection follows.</p>
+        </div>
+
+        <div class="philosophy-grid">
+          <div class="philosophy-item">
+            <h3>Compose, don't scrape.</h3>
+            <p>Every tool only generates URLs and opens them in your browser. No content scripts, no background polling, no platform APIs. The platform does the actual search; the tool just makes the URL easy to construct.</p>
+          </div>
+
+          <div class="philosophy-item">
+            <h3>Local-first data.</h3>
+            <p>Saved searches, tags, and settings live in <code>chrome.storage.local</code> on your device. Nothing syncs across machines, nothing is sent anywhere. Export JSON writes to a file on your disk; you control the rest.</p>
+          </div>
+
+          <div class="philosophy-item">
+            <h3>Minimum permissions.</h3>
+            <p>Six of seven tools declare only <code>storage</code> + <code>sidePanel</code>. LinkedIn adds <code>scripting</code> + a LinkedIn-scoped <code>host_permissions</code> for its optional ID-capture feature — triggered exclusively on user click, never on page load.</p>
+          </div>
+
+          <div class="philosophy-item">
+            <h3>Open source.</h3>
+            <p>The whole monorepo lives on <a href="https://github.com/gvensan/social-chrome-plugins" target="_blank" rel="noopener">GitHub</a>. Every URL builder, every template, every test. If a parameter changes, you can see the fix; if a template's missing, you can add one.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-row">
+        Built by <a href="https://github.com/gvensan" target="_blank" rel="noopener">Gvensan</a>
+        ·
+        <a href="https://github.com/gvensan/social-chrome-plugins" target="_blank" rel="noopener">Source on GitHub</a>
+        ·
+        <a href="https://github.com/gvensan/social-chrome-plugins/issues" target="_blank" rel="noopener">Report an issue</a>
+      </p>
+      <p class="footer-note">
+        None of these tools are affiliated with, endorsed by, or sponsored by the platforms they search.
+        Manifest V3 · Side panel · Local-only data · Open source.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
